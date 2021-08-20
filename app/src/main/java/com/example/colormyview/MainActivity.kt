@@ -15,7 +15,8 @@ class MainActivity : AppCompatActivity() {
 
         val clickableViews: List<View> =
             listOf(findViewById(R.id.box_one_text),findViewById(R.id.box_two_text), findViewById(R.id.box_three_text),
-                findViewById(R.id.box_four_text), findViewById(R.id.box_five_text), findViewById(R.id.constrain_layout))
+                findViewById(R.id.box_four_text), findViewById(R.id.box_five_text), findViewById(R.id.constrain_layout),
+                findViewById(R.id.re_button), findViewById(R.id.yellow_botton),findViewById(R.id.green_button))
         for (item in clickableViews) {
             item.setOnClickListener { makeColored(it) }
         }
@@ -33,6 +34,9 @@ class MainActivity : AppCompatActivity() {
             R.id.box_four_text -> view.setBackgroundResource(android.R.color.holo_green_dark)
             R.id.box_five_text -> view.setBackgroundResource(android.R.color.holo_green_light)
 
+            R.id.re_button-> findViewById<View>(R.id.box_three_text).setBackgroundResource(R.color.my_red);
+            R.id.yellow_botton-> findViewById<View>(R.id.box_four_text).setBackgroundResource(R.color.my_yellow);
+            R.id.green_button-> findViewById<View>(R.id.box_five_text).setBackgroundResource(R.color.my_green);
             else -> view.setBackgroundColor(Color.LTGRAY)
         }
     }
